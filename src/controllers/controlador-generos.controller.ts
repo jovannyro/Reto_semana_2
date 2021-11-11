@@ -1,3 +1,4 @@
+import { service } from '@loopback/core';
 import {
   Count,
   CountSchema,
@@ -19,11 +20,13 @@ import {
 } from '@loopback/rest';
 import {Generos} from '../models';
 import {GenerosRepository} from '../repositories';
+import { NotificacionService } from '../services';
 
 export class ControladorGenerosController {
   constructor(
     @repository(GenerosRepository)
     public generosRepository : GenerosRepository,
+    
   ) {}
 
   @post('/generos')
